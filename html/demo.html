@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .collapsible {
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            text-align: left;
+            border: none;
+            outline: none;
+            background-color: #f1f1f1;
+            font-size: 16px;
+        }
+
+        .content {
+            display: none;
+            padding: 0 18px;
+            overflow: hidden;
+            background-color: #f9f9f9;
+        }
+
+        .collapsible:before {
+            content: '\02795'; /* Unicode character for "plus" sign */
+            font-size: 13px;
+            color: #777;
+            float: right;
+            margin-left: 5px;
+        }
+
+        .collapsible.active:before {
+            content: '\02796'; /* Unicode character for "cross" sign */
+        }
+    </style>
+</head>
+<body>
+
+<button class="collapsible" onclick="toggleContent()">Question 1</button>
+<div class="content">
+    <p>Answer 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+</div>
+
+<script>
+    function toggleContent() {
+        var content = document.querySelector('.content');
+        var button = document.querySelector('.collapsible');
+
+        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        button.classList.toggle('active');
+    }
+</script>
+
+</body>
+</html>
